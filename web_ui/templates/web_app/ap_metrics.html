@@ -1,0 +1,97 @@
+<div class="hero hero--indigo hero--compressed">
+    <div class="hero__content">
+        <div class="container center-xs">
+            <div class="row">
+                <div class="col-md-8 col-xl-10">
+                    <div class="flex-fluid">
+                        <h1>AP Metrics </h1>
+                        <p class="text-large">All the information of your access point in one place
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="panel panel--loose panel--bordered">
+            <div class="row">
+                <div class="col-md-12 text-large">
+                    <h1 class="text-huge text-blue base-margin-bottom">Metrics</h1>
+                </div>
+                <div class="col-md-12 text-large">
+                    <div class="form-group">
+                        <div class="form-group__text">
+                            <input id="apSearchByName" ng-model="search.apName">
+                            <label for="apSearchByName">Search (AP Name)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Details</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="ap in collection | property:'fields.name':search.apName">
+                                <td>{a ap.fields.name a}</td>
+                                <td>
+                                    <div class="col-lg-12">
+                                        <h6>Clients</h6>
+                                        <hr/>
+                                        <div class="col-lg-4">
+                                            <b>5GHz:</b> {a ap.fields.fiveGClients a}
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <b>2.5GHz:</b> {a ap.fields.twoGClients a}
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <b>Poor Coverage:</b> {a ap.fields.poorCoverageClients a}
+                                        </div>
+                                        <br/>
+                                        <h6>Utilization</h6>
+                                        <hr/>
+
+                                        <div class="col-lg-4">
+                                            <b>Channel Utilization</b> {a ap.fields.channelUtilization a}
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <b>Tx Fragments</b> {a ap.fields.txFragmentCount a}
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <b>Rx Fragments</b> {a ap.fields.rxFragmentCount a}
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <b>Retries</b> {a ap.fields.retryCount a}
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <b>Multiple Retries</b> {a ap.fields.multipleRetryCount a}
+                                        </div>
+                                        <br/>
+                                        <h6>Power</h6>
+                                        <hr/>
+
+                                        <div class="col-lg-4">
+                                            <b>Output: </b>{a ap.fields.txPowerOutput a}
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

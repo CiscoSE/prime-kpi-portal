@@ -1,0 +1,58 @@
+<div class="hero hero--indigo hero--compressed">
+    <div class="hero__content">
+        <div class="container center-xs">
+            <div class="row">
+                <div class="col-md-8 col-xl-10">
+                    <div class="flex-fluid">
+                        <h1>Collection </h1>
+                        <p class="text-large">Change collection parameters
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="panel panel--loose panel--bordered">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6>
+                        Current interval is {a settings.collectionInterval a} hours. Last collection was {a
+                        settings.lastCollectionTime | date:'MM/dd/yyyy @ h:mma Z' a}
+                    </h6>
+                    <hr/>
+                    <button ng-if="collectionStatus == 'dead'" class="btn btn--primary" ng-click="startCollection()">
+                        Start Collection
+                    </button>
+                    <button ng-if="collectionStatus != 'dead'" class="btn btn--primary" ng-click="startCollection()"
+                            disabled>Collection in process...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="panel panel--loose panel--bordered">
+            <div class="row">
+                <div class="col-md-12 text-large">
+                    <h1 class="text-huge text-blue base-margin-bottom">Change Settings</h1>
+                </div>
+                <div class="col-md-12 text-large">
+                    <div class="form-group">
+                        <div class="form-group__text">
+                            <input id="collectionInterval" ng-model="newSettings.collectionInterval" type="number">
+                            <label for="collectionInterval">Collection interval (Hours)</label>
+                        </div>
+                    </div>
+                    <button class="btn btn--primary" ng-click="setSettings()">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

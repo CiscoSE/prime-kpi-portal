@@ -1,0 +1,115 @@
+<div class="hero hero--indigo hero--compressed">
+    <div class="hero__content">
+        <div class="container center-xs">
+            <div class="row">
+                <div class="col-md-8 col-xl-10">
+                    <div class="flex-fluid">
+                        <h1>Monitoring </h1>
+                        <p class="text-large">See the latest indicators from your wireless network
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="panel panel--loose panel--bordered">
+            <div class="row">
+                <div class="col-md-12 text-large">
+                    <h1 class="text-huge text-blue base-margin-bottom">Metrics</h1>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h4>Acces Points</h4>
+                    <br/>
+                    <span ng-if="APs != -1" class="label label--circle label--goliath label--blue">{a collection.length a}</span>
+                    <div ng-if="APs == -1" class="loading-dots loading-dots--info">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h4>5 GHz Clients</h4>
+                    <br/>
+                    <span ng-if="fiveGClients != -1" class="label label--circle label--goliath label--warning">{a fiveGClients a}</span>
+                    <div ng-if="fiveGClients == -1" class="loading-dots loading-dots--info">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h4>2.4 GHz Clients</h4>
+                    <br/>
+
+                    <span ng-if="twoPointFourGClients != -1" class="label label--circle label--goliath label--success">{a twoPointFourGClients a}</span>
+
+                    <div ng-if="twoPointFourGClients == -1" class="loading-dots loading-dots--info">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="panel panel--loose panel--bordered">
+            <div class="row">
+                <div class="col-md-12 text-large">
+                    <h1 class="text-huge text-blue base-margin-bottom">Statistics</h1>
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <div class="gauge-container">
+                        <div class="gauge gauge--alt gauge--info" data-percentage="{a averageChannelUtilization a}">
+                            <div class="gauge__circle">
+                                <div class="mask full">
+                                    <div class="fill"></div>
+                                </div>
+                                <div class="mask half">
+                                    <div class="fill"></div>
+                                    <div class="fill fix"></div>
+                                </div>
+                            </div>
+                            <div class="gauge__inset">
+                                <div class="gauge__percentage">{a averageChannelUtilization a}%</div>
+                            </div>
+                        </div>
+                        <div class="gauge__label">AP Average Channel Utilization</div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="gauge-container">
+                        <div class="gauge gauge--alt gauge--success"
+                             data-percentage="{a poorCoverageClientsPercentage a}">
+                            <div class="gauge__circle">
+                                <div class="mask full">
+                                    <div class="fill"></div>
+                                </div>
+                                <div class="mask half">
+                                    <div class="fill"></div>
+                                    <div class="fill fix"></div>
+                                </div>
+                            </div>
+                            <div class="gauge__inset">
+                                <div class="gauge__percentage">{a poorCoverageClientsPercentage a}%</div>
+                            </div>
+                        </div>
+                        <div class="gauge__label">Poor Coverage Clients</div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
