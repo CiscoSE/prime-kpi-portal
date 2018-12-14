@@ -46,7 +46,7 @@ Then, create the database:
 # Open a bash shell into the container
 docker exec -it primekpiportaldb /bin/bash
 
-# Get into the database
+# Get into the database. Default credentials are postgres/postgres
 psql --user postgres
 
 # Create database 
