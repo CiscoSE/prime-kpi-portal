@@ -50,7 +50,7 @@ docker exec -it primekpiportaldb /bin/bash
 psql --user postgres
 
 # Create database 
-CREATE DATABASE kpiportal2;
+CREATE DATABASE kpiportal;
 
 # Use "\q" to exit the database
 ```
