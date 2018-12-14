@@ -187,8 +187,8 @@ class PrimeController:
                     break
 
             for RFStatsDetail in RFLoadStatsList:
-                if RFStatsDetail["rfStatsV3DTO"]["macAddress"] == apDetail["accessPointDetailsDTO"]["macAddress"]:
-                    txPowerOutput = RFStatsDetail["rfStatsV3DTO"]["txPowerOutput"]
+                if RFStatsDetail["rfStatsDTO"]["macAddress"] == apDetail["accessPointDetailsDTO"]["macAddress"]:
+                    txPowerOutput = RFStatsDetail["rfStatsDTO"]["txPowerOutput"]
                     break
 
             for RFCount in RFCountList:
